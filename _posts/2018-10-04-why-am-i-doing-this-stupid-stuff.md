@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Why am I doing this stupid stuff? - MAG Software Portal"
+title: "Why am I doing this stupid stuff?"
 date: 2018-10-04
 ---
 
