@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Why am I doing this stupid stuff?"
+whereis: Reading post
 date: 2018-10-04
 ---
 
