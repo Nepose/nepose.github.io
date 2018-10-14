@@ -1,0 +1,93 @@
+---
+layout: post
+date: 2018-10-13
+title: Firmware update 2.19.01 in next week and new versioning schedule
+whereis: Reading post
+---
+
+<p>Hello!<br>
+I have to announce a bad news for you, mates. The firmware update 2.19.01 will be released next week, not this one. I don’t have much time to do it now because of lessons and other mandatory stuff which can’t be skipped, also I’m getting some problems with editing localization strings. I’m just sorry.</p>
+<p>But I promise you that I’ll release new FW in this week ;) At this moment I can share plan of new functionality into MAG Software Portal v 2.19.01r:</p>
+<ol>
+<li>Adding new shortcuts into embedded portal:</li>
+</ol>
+<ul>
+<li><strong>Portals loader</strong>:
+<ul>
+<li>if there are set any portals into <em>Servers</em> -&gt; <em>Portals</em>, boots menu where you can choose portal;</li>
+<li>if there is set DHCP portal (<em>Servers</em> -&gt; <em>More</em>), this portal will be booted even if there are set any “normal” portals;</li>
+<li>if there isn’t set any external portal, the embedded portal will be restarted.</li>
+</ul>
+</li>
+<li><strong>Favorites</strong> - direct shortcut to Favorites list (<em>Home Media</em> -&gt; <em>Favorites</em>). After exiting it the Home Media full list will be shown.</li>
+<li><strong>Firmware info</strong> - it will boot specially prepared version of this blog (i can’t promise this functionality as i’m not sure it).</li>
+</ul>
+<ol start="2">
+<li>Adding first release of recovery file system with choosing option to remote execute on STB:</li>
+</ol>
+<ul>
+<li>reboot STB;</li>
+<li>start embedded portal, application or URL that you put.</li>
+</ul>
+<ol start="3">
+<li>Embedding patch 1 into image not to flash it again from SSH.</li>
+<li>Adding new splash screens into portal loader and system settings.</li>
+</ol>
+<p>And since this version I’ll use new versioning schedule. The three categories of versioning are used:</p>
+<ul>
+<li><strong>Release</strong> - the main build of firmware, now it is 219. When making major changes it will be upper.</li>
+<li><strong>Version</strong> - it is full marking of firmware description, example is <em>2.19.01-release</em>. The first part (in left from dash) means particular version and the right one means describing tag which you can find below.</li>
+<li><strong>Base</strong> - it is basing from Infomir, the latest official firmware which components MAG Software Portal uses.</li>
+</ul>
+<p>The release is used as equivalent of major tag in Git schedule. The first two parts of the version (like 2.19 in 2.19.00) are always the same as release, they both are major tag. Major marking is intended to catch the largest changes into firmware, the milestones in development and things which completely change usage of firmware (e.g. embedding Linux-based GUI for using STB with keyboard and mouse like computer). The third part (like 01 in 2.19.01) is used as minor tag, which will take the smaller changes, but not as small as the patches and revs. The middle size updates will be registered here as first release. Here we will use “release” word in two meanings, as 3-digit major tag and update to minor tag without any revisions. This stuff will be described below.</p>
+<p>The describing tags for images are:</p>
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>The long ending mark (channel name)</th>
+<th>Short marking</th>
+<th>Example on version with short and long marking</th>
+<th>Describe of tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>release</td>
+<td>r (or without mark)</td>
+<td>2.19.01-release / 2.19.01r / 2.19.01</td>
+<td>The release mark means the full version of image, without any SSH updates. Don’t mistake it with “release” as 3-digit major number. The “release” tag may be also used without any mark, so 2.19.01 may mean the same as 2.19.01-release.</td>
+</tr>
+<tr>
+<td>revision</td>
+<td>rn (where n is number of rev)</td>
+<td>2.19.01-revision2 / 2.19.01r</td>
+<td>The revision mark means small update which changes something, it can be full imageupdate or SSH upgrade. First release of particular revision is always first revision, for example after 2.19.01-release won’t be 2.19.01-revision1, but 2 because this release means also r1.</td>
+</tr>
+<tr>
+<td>patch</td>
+<td>pn (n is number)</td>
+<td>2.19.01-patch2 / 2.19.01p2</td>
+<td>The patch is a small change that fast fixes some bug into image. Patches are done quickly since image releasing and mostly are released to do upgrade by SSH method.</td>
+</tr>
+<tr>
+<td>beta</td>
+<td>bn (n is number)</td>
+<td>2.19.01-beta1 / 2.19.01b1</td>
+<td>The beta tag will be used for firmware updates that may have bugs because of releasing new, not long tested functionality. These versions are developed with intention to catch these bugs and fix into RC or R channel.</td>
+</tr>
+<tr>
+<td>alpha</td>
+<td>an (n is number)</td>
+<td>2.19.01-alpha1 / 2.19.01a1</td>
+<td>The alpha tag will be used when there may be too much problems to use it as beta and I would need your help to fix them.</td>
+</tr>
+<tr>
+<td>release_candidate</td>
+<td>rcn (n is number)</td>
+<td>2.19.01-release_candidate1 / 2.19.01rc1</td>
+<td>The release candidate mark is the version which candidates to be full release. If it is good, I’ll just change mark to “release”, if not then we fix problems.</td>
+</tr>
+</tbody>
+</table>
+<p>The tags beta, alpha and rc will be used when releasing bigger changes and I would need to collaborate with you, okay? :) In normal changes just releasing not to make confusing. But as the project grows, we have to predict the future where I'm going to release newer and newer ideas and how to number it.</p>
+<p>Thank you for understanding me :)</p>
