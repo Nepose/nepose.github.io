@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Firmware today or tomorrow..."
 whereis: Reading post
 date: 2018-10-21
